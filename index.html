@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastel Music Player</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="logo">
+        <i class="fas fa-music"></i>
+        <span>PastelBeats</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active" data-section="home"><i class="fas fa-home"></i> Home</a>
+        <a href="#" class="nav-item" data-section="search"><i class="fas fa-search"></i> Search</a>
+        <a href="#" class="nav-item" data-section="playlist"><i class="fas fa-list"></i> Playlist</a>
+        <a href="#" class="nav-item" data-section="favorites"><i class="fas fa-heart"></i> Favorites</a>
+        <a href="#" class="nav-item" data-section="categories"><i class="fas fa-tags"></i> Categories</a>
+        <a href="#" class="nav-item" data-section="recently-played"><i class="fas fa-clock"></i> Recent</a>
+        <a href="#" class="nav-item" data-section="lyrics"><i class="fas fa-microphone"></i> Lyrics</a>
+      </nav>
+      <div class="theme-switcher">
+        <button id="themeToggle"><i class="fas fa-moon"></i> <span>Dark Mode</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <h1 id="sectionTitle">Home</h1>
+        <div class="header-actions">
+          <div class="search-input-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search songs, artists...">
+          </div>
+          <button id="equalizerToggle" class="eq-btn"><i class="fas fa-chart-bar"></i></button>
+        </div>
+      </header>
+
+      <section id="homeSection" class="section active">
+        <div class="hero-card">
+          <div class="hero-content">
+            <h2>Welcome to PastelBeats</h2>
+            <p>Your favorite music, wrapped in pastel</p>
+          </div>
+          <div class="hero-art">
+            <i class="fas fa-headphones"></i>
+          </div>
+        </div>
+        <div class="album-grid" id="albumGrid"></div>
+      </section>
+
+      <section id="searchSection" class="section">
+        <div class="search-results" id="searchResults">
+          <p class="hint">Type to search songs, artists, or albums...</p>
+        </div>
+      </section>
+
+      <section id="playlistSection" class="section">
+        <div class="playlist-container" id="playlistContainer"></div>
+      </section>
+
+      <section id="favoritesSection" class="section">
+        <div class="favorites-container" id="favoritesContainer">
+          <p class="empty-state"><i class="fas fa-heart"></i> No favorites yet. Click the heart icon to add songs!</p>
+        </div>
+      </section>
+
+      <section id="categoriesSection" class="section">
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+
+      <section id="recentlyPlayedSection" class="section">
+        <div class="recently-played-container" id="recentlyPlayedContainer">
+          <p class="empty-state"><i class="fas fa-clock"></i> No recently played songs.</p>
+        </div>
+      </section>
+
+      <section id="lyricsSection" class="section">
+        <div class="lyrics-container" id="lyricsContainer">
+          <div class="lyrics-header">
+            <div class="lyrics-song-info">
+              <img id="lyricsCover" src="" alt="">
+              <div>
+                <h3 id="lyricsSongTitle">Select a song</h3>
+                <p id="lyricsArtistName"></p>
+              </div>
+            </div>
+            <button id="toggleLyricsBtn" class="btn-sm"><i class="fas fa-eye-slash"></i> Hide</button>
+          </div>
+          <div class="lyrics-body" id="lyricsBody">
+            <p class="hint">Play a song to see its lyrics here...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="equalizer-bar" id="equalizerBar">
+      <div class="eq-bar" style="--delay:0s"></div>
+      <div class="eq-bar" style="--delay:0.1s"></div>
+      <div class="eq-bar" style="--delay:0.2s"></div>
+      <div class="eq-bar" style="--delay:0.3s"></div>
+      <div class="eq-bar" style="--delay:0.4s"></div>
+      <div class="eq-bar" style="--delay:0.5s"></div>
+      <div class="eq-bar" style="--delay:0.6s"></div>
+      <div class="eq-bar" style="--delay:0.15s"></div>
+      <div class="eq-bar" style="--delay:0.35s"></div>
+      <div class="eq-bar" style="--delay:0.25s"></div>
+    </div>
+  </div>
+
+  <footer class="player-bar">
+    <div class="now-playing-info">
+      <img id="currentCover" src="" alt="cover">
+      <div class="track-info">
+        <p id="currentTitle">Select a song</p>
+        <p id="currentArtist">Pick from your playlist</p>
+      </div>
+      <button class="fav-btn" id="favBtn"><i class="far fa-heart"></i></button>
+    </div>
+
+    <div class="player-controls">
+      <div class="controls-top">
+        <button id="shuffleBtn" title="Shuffle"><i class="fas fa-random"></i></button>
+        <button id="prevBtn" title="Previous"><i class="fas fa-step-backward"></i></button>
+        <button id="playBtn" title="Play/Pause"><i class="fas fa-play"></i></button>
+        <button id="nextBtn" title="Next"><i class="fas fa-step-forward"></i></button>
+        <button id="repeatBtn" title="Repeat"><i class="fas fa-repeat"></i></button>
+      </div>
+      <div class="progress-container">
+        <span id="currentTime">0:00</span>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+          <div class="progress-thumb" id="progressThumb"></div>
+        </div>
+        <span id="totalDuration">0:00</span>
+      </div>
+    </div>
+
+    <div class="volume-controls">
+      <button id="muteBtn" title="Mute/Unmute"><i class="fas fa-volume-up"></i></button>
+      <div class="volume-slider">
+        <div class="volume-fill" id="volumeFill"></div>
+        <div class="volume-thumb" id="volumeThumb"></div>
+      </div>
+      <span id="volumePercent">100%</span>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
