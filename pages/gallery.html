@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - KEC</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loading-screen"><div class="loader"><div class="loader-circle"></div><div class="loader-text">KEC</div></div></div>
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    <nav id="navbar"><div class="nav-container">
+        <div class="nav-logo"><img src="../assets/images/college-logo.png" alt="" onerror="this.style.display='none'"><span>KEC</span></div>
+        <div class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="departments.html" class="nav-link">Departments</a></li>
+            <li><a href="../index.html#courses" class="nav-link">Courses</a></li>
+            <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+            <li><a href="placements.html" class="nav-link">Placements</a></li>
+            <li><a href="faculty.html" class="nav-link">Faculty</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions"><button id="dark-mode-toggle" class="theme-btn"><i class="fas fa-moon"></i></button></div>
+    </div></nav>
+
+    <section class="section bg-light" style="margin-top:70px;padding-top:30px"><div class="container">
+        <div class="section-header"><h2>Photo <span>Gallery</span></h2><div class="section-divider"></div><p>Glimpses of life at KEC</p></div>
+        <div class="gallery-filters">
+            <button class="gallery-filter active" data-filter="all">All</button>
+            <button class="gallery-filter" data-filter="campus">Campus</button>
+            <button class="gallery-filter" data-filter="events">Events</button>
+            <button class="gallery-filter" data-filter="labs">Labs</button>
+            <button class="gallery-filter" data-filter="library">Library</button>
+            <button class="gallery-filter" data-filter="sports">Sports</button>
+            <button class="gallery-filter" data-filter="hostel">Hostel</button>
+        </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="events"><img src="https://images.unsplash.com/photo-1775623606645-470e04a881cb?w=400&h=300&fit=crop" alt="Graduation"><div class="gallery-overlay"><span>Graduation Ceremony</span></div></div>
+                <div class="gallery-item" data-category="events"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop" alt="College Event"><div class="gallery-overlay"><span>Annual Day Celebration</span></div></div>
+                <div class="gallery-item" data-category="campus"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop" alt="Campus"><div class="gallery-overlay"><span>Main Campus</span></div></div>
+                <div class="gallery-item" data-category="events"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&h=300&fit=crop" alt="Tech Event"><div class="gallery-overlay"><span>Tech Symposium</span></div></div>
+                <div class="gallery-item" data-category="events"><img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop" alt="Convocation"><div class="gallery-overlay"><span>Convocation Day</span></div></div>
+                <div class="gallery-item" data-category="campus"><img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400&h=300&fit=crop" alt="College Grounds"><div class="gallery-overlay"><span>College Grounds</span></div></div>
+                <div class="gallery-item" data-category="events"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop" alt="Cultural Program"><div class="gallery-overlay"><span>Cultural Program</span></div></div>
+                <div class="gallery-item" data-category="labs"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop" alt="Computer Lab"><div class="gallery-overlay"><span>Computer Lab</span></div></div>
+                <div class="gallery-item" data-category="events"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&h=300&fit=crop" alt="College Fest"><div class="gallery-overlay"><span>College Fest</span></div></div>
+                <div class="gallery-item" data-category="library"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=300&fit=crop" alt="Library"><div class="gallery-overlay"><span>Central Library</span></div></div>
+                <div class="gallery-item" data-category="sports"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=300&fit=crop" alt="Sports"><div class="gallery-overlay"><span>Sports Meet</span></div></div>
+                <div class="gallery-item" data-category="campus"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=300&fit=crop" alt="Campus Aerial"><div class="gallery-overlay"><span>Campus Aerial View</span></div></div>
+            </div>
+    </div></section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-prev"><i class="fas fa-chevron-left"></i></span>
+        <span class="lightbox-next"><i class="fas fa-chevron-right"></i></span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+    </div>
+
+    <footer class="footer"><div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h3>About College</h3><p>KEC is a premier institution committed to academic excellence since 1995.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+            <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="../index.html#courses">Courses</a></li><li><a href="placements.html">Placements</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+            <div class="footer-col"><h3>Departments</h3><ul><li><a href="departments.html">Electronics Communication</a></li><li><a href="departments.html">Electrical & Electronics</a></li><li><a href="departments.html">Computer Science</a></li><li><a href="departments.html">CSE (AI & ML)</a></li><li><a href="departments.html">CSE (Data Science)</a></li><li><a href="departments.html">Artificial Intelligence</a></li><li><a href="departments.html">Mechanical Engineering</a></li><li><a href="departments.html">Humanities & Sciences</a></li><li><a href="departments.html">Civil Engineering</a></li><li><a href="departments.html">MBA</a></li><li><a href="departments.html">R&D</a></li></ul></div>
+            <div class="footer-col"><h3>Contact Info</h3><p><i class="fas fa-map-marker-alt"></i> Perundurai, Erode</p><p><i class="fas fa-phone"></i> +91 4294 226 500</p><p><i class="fas fa-envelope"></i> info@kec.ac.in</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 KEC. All Rights Reserved.</p></div>
+    </div></footer>
+    <div id="toast-container"></div>
+    <script src="../script.js"></script>
+</body>
+</html>

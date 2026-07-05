@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - KEC</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loading-screen"><div class="loader"><div class="loader-circle"></div><div class="loader-text">KEC</div></div></div>
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    <nav id="navbar"><div class="nav-container">
+        <div class="nav-logo"><img src="../assets/images/college-logo.png" alt="" onerror="this.style.display='none'"><span>KEC</span></div>
+        <div class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="departments.html" class="nav-link active">Departments</a></li>
+            <li><a href="../index.html#courses" class="nav-link">Courses</a></li>
+            <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+            <li><a href="placements.html" class="nav-link">Placements</a></li>
+            <li><a href="faculty.html" class="nav-link">Faculty</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions"><button id="dark-mode-toggle" class="theme-btn"><i class="fas fa-moon"></i></button></div>
+    </div></nav>
+
+    <section class="section" style="margin-top:70px;padding-top:30px"><div class="container">
+        <div class="section-header"><h2>Our <span>Departments</span></h2><div class="section-divider"></div><p>Explore our diverse academic departments</p></div>
+        <div class="dept-search"><input type="text" id="deptSearch" placeholder="Search departments..."><i class="fas fa-search"></i></div>
+        <div class="dept-grid" id="deptGrid">
+            <div class="dept-card fade-in show" data-name="Electronics Communication Engineering"><div class="dept-img"><i class="fas fa-microchip"></i></div><div class="dept-info"><h3>Electronics Communication Engineering</h3><p class="hod">HOD: Dr. Venkatesh Rao</p><p>Comprehensive program in VLSI design, embedded systems, communication networks, and signal processing.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Electrical and Electronics Engineering"><div class="dept-img"><i class="fas fa-bolt"></i></div><div class="dept-info"><h3>Electrical and Electronics Engineering</h3><p class="hod">HOD: Dr. Lakshmi Narayanan</p><p>Power systems, renewable energy, electrical machines, and control systems with smart grid research.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Computer Science Engineering"><div class="dept-img"><i class="fas fa-laptop-code"></i></div><div class="dept-info"><h3>Computer Science Engineering</h3><p class="hod">HOD: Dr. Priya Sharma</p><p>Cutting-edge curriculum in algorithms, data structures, AI, and software engineering.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Computer Science Engineering (AI&ML)"><div class="dept-img"><i class="fas fa-robot"></i></div><div class="dept-info"><h3>CSE (AI & ML)</h3><p class="hod">HOD: Dr. Sneha Patel</p><p>Specialized program in machine learning, deep learning, neural networks, and NLP.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Computer Science Engineering (DS)"><div class="dept-img"><i class="fas fa-database"></i></div><div class="dept-info"><h3>CSE (Data Science)</h3><p class="hod">HOD: Dr. Arun Kumar</p><p>Focus on big data analytics, data visualization, statistical modeling, and business intelligence.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Artificial Intelligence"><div class="dept-img"><i class="fas fa-brain"></i></div><div class="dept-info"><h3>Artificial Intelligence</h3><p class="hod">HOD: Dr. Karthik Rajan</p><p>Dedicated AI program covering computer vision, reinforcement learning, and intelligent systems.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Mechanical Engineering"><div class="dept-img"><i class="fas fa-cogs"></i></div><div class="dept-info"><h3>Mechanical Engineering</h3><p class="hod">HOD: Dr. Suresh Babu</p><p>Thermal engineering, design, manufacturing, and automotive engineering with CAD/CAM labs.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Humanities and Sciences"><div class="dept-img"><i class="fas fa-book-open"></i></div><div class="dept-info"><h3>Humanities and Sciences</h3><p class="hod">HOD: Dr. Anitha Devi</p><p>Foundation courses in Mathematics, Physics, Chemistry, English, and soft skills development.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Civil Engineering"><div class="dept-img"><i class="fas fa-hard-hat"></i></div><div class="dept-info"><h3>Civil Engineering</h3><p class="hod">HOD: Dr. Meena Krishnan</p><p>Structural, geotechnical, transportation, and environmental engineering programs.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Master of Business Administration"><div class="dept-img"><i class="fas fa-chart-line"></i></div><div class="dept-info"><h3>Master of Business Administration</h3><p class="hod">HOD: Dr. Rajesh Kumar</p><p>Finance, marketing, HR, operations, and business analytics with industry internships.</p><a href="#" class="btn btn-sm">Learn More</a></div></div>
+            <div class="dept-card fade-in show" data-name="Research and Development"><div class="dept-img"><i class="fas fa-flask"></i></div><div class="dept-info"><h3>Research & Development</h3><p class="hod">HOD: Dr. S. Murugan</p><p>Dedicated R&D cell promoting innovation, patents, funded research, and industry collaborations.</p>                            <a href="#" class="btn btn-sm">Learn More</a></div></div>
+            </div>
+    </div></section>
+
+    <footer class="footer"><div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h3>About College</h3><p>KEC is a premier institution committed to academic excellence since 1995.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+            <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="../index.html#courses">Courses</a></li><li><a href="placements.html">Placements</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+            <div class="footer-col"><h3>Departments</h3><ul><li><a href="departments.html">Electronics Communication</a></li><li><a href="departments.html">Electrical & Electronics</a></li><li><a href="departments.html">Computer Science</a></li><li><a href="departments.html">CSE (AI & ML)</a></li><li><a href="departments.html">CSE (Data Science)</a></li><li><a href="departments.html">Artificial Intelligence</a></li><li><a href="departments.html">Mechanical Engineering</a></li><li><a href="departments.html">Humanities & Sciences</a></li><li><a href="departments.html">Civil Engineering</a></li><li><a href="departments.html">MBA</a></li><li><a href="departments.html">R&D</a></li></ul></div>
+            <div class="footer-col"><h3>Contact Info</h3><p><i class="fas fa-map-marker-alt"></i> Perundurai, Erode</p><p><i class="fas fa-phone"></i> +91 4294 226 500</p><p><i class="fas fa-envelope"></i> info@kec.ac.in</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 KEC. All Rights Reserved.</p></div>
+    </div></footer>
+    <div id="toast-container"></div>
+    <script src="../script.js"></script>
+</body>
+</html>

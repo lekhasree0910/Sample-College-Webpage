@@ -1,161 +1,1161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pastel Music Player</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="app-container">
-    <aside class="sidebar">
-      <div class="logo">
-        <i class="fas fa-music"></i>
-        <span>PastelBeats</span>
-      </div>
-      <nav class="nav-menu">
-        <a href="#" class="nav-item active" data-section="home"><i class="fas fa-home"></i> Home</a>
-        <a href="#" class="nav-item" data-section="search"><i class="fas fa-search"></i> Search</a>
-        <a href="#" class="nav-item" data-section="playlist"><i class="fas fa-list"></i> Playlist</a>
-        <a href="#" class="nav-item" data-section="favorites"><i class="fas fa-heart"></i> Favorites</a>
-        <a href="#" class="nav-item" data-section="categories"><i class="fas fa-tags"></i> Categories</a>
-        <a href="#" class="nav-item" data-section="recently-played"><i class="fas fa-clock"></i> Recent</a>
-        <a href="#" class="nav-item" data-section="lyrics"><i class="fas fa-microphone"></i> Lyrics</a>
-      </nav>
-      <div class="theme-switcher">
-        <button id="themeToggle"><i class="fas fa-moon"></i> <span>Dark Mode</span></button>
-      </div>
-    </aside>
-
-    <main class="main-content">
-      <header class="top-bar">
-        <h1 id="sectionTitle">Home</h1>
-        <div class="header-actions">
-          <div class="search-input-wrapper">
-            <i class="fas fa-search"></i>
-            <input type="text" id="searchInput" placeholder="Search songs, artists...">
-          </div>
-          <button id="equalizerToggle" class="eq-btn"><i class="fas fa-chart-bar"></i></button>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">KEC</div>
         </div>
-      </header>
+    </div>
 
-      <section id="homeSection" class="section active">
-        <div class="hero-card">
-          <div class="hero-content">
-            <h2>Welcome to PastelBeats</h2>
-            <p>Your favorite music, wrapped in pastel</p>
-          </div>
-          <div class="hero-art">
-            <i class="fas fa-headphones"></i>
-          </div>
-        </div>
-        <div class="album-grid" id="albumGrid"></div>
-      </section>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-      <section id="searchSection" class="section">
-        <div class="search-results" id="searchResults">
-          <p class="hint">Type to search songs, artists, or albums...</p>
-        </div>
-      </section>
-
-      <section id="playlistSection" class="section">
-        <div class="playlist-container" id="playlistContainer"></div>
-      </section>
-
-      <section id="favoritesSection" class="section">
-        <div class="favorites-container" id="favoritesContainer">
-          <p class="empty-state"><i class="fas fa-heart"></i> No favorites yet. Click the heart icon to add songs!</p>
-        </div>
-      </section>
-
-      <section id="categoriesSection" class="section">
-        <div class="category-grid" id="categoryGrid"></div>
-      </section>
-
-      <section id="recentlyPlayedSection" class="section">
-        <div class="recently-played-container" id="recentlyPlayedContainer">
-          <p class="empty-state"><i class="fas fa-clock"></i> No recently played songs.</p>
-        </div>
-      </section>
-
-      <section id="lyricsSection" class="section">
-        <div class="lyrics-container" id="lyricsContainer">
-          <div class="lyrics-header">
-            <div class="lyrics-song-info">
-              <img id="lyricsCover" src="" alt="">
-              <div>
-                <h3 id="lyricsSongTitle">Select a song</h3>
-                <p id="lyricsArtistName"></p>
-              </div>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/college-logo.png" alt="College Logo" onerror="this.style.display='none'">
+                <span>KEC</span>
             </div>
-            <button id="toggleLyricsBtn" class="btn-sm"><i class="fas fa-eye-slash"></i> Hide</button>
-          </div>
-          <div class="lyrics-body" id="lyricsBody">
-            <p class="hint">Play a song to see its lyrics here...</p>
-          </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li class="dropdown">
+                    <a href="#departments" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#departments">ECE</a></li>
+                        <li><a href="#departments">EEE</a></li>
+                        <li><a href="#departments">CSE</a></li>
+                        <li><a href="#departments">CSE (AI&ML)</a></li>
+                        <li><a href="#departments">CSE (DS)</a></li>
+                        <li><a href="#departments">AI</a></li>
+                        <li><a href="#departments">Mechanical</a></li>
+                        <li><a href="#departments">Humanities</a></li>
+                        <li><a href="#departments">Civil</a></li>
+                        <li><a href="#departments">MBA</a></li>
+                        <li><a href="#departments">R&D</a></li>
+                    </ul>
+                </li>
+                <li><a href="#courses" class="nav-link">Courses</a></li>
+                <li><a href="#admissions" class="nav-link">Admissions</a></li>
+                <li><a href="#placements" class="nav-link">Placements</a></li>
+                <li><a href="#faculty" class="nav-link">Faculty</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="dark-mode-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
-      </section>
-    </main>
+    </nav>
 
-    <div class="equalizer-bar" id="equalizerBar">
-      <div class="eq-bar" style="--delay:0s"></div>
-      <div class="eq-bar" style="--delay:0.1s"></div>
-      <div class="eq-bar" style="--delay:0.2s"></div>
-      <div class="eq-bar" style="--delay:0.3s"></div>
-      <div class="eq-bar" style="--delay:0.4s"></div>
-      <div class="eq-bar" style="--delay:0.5s"></div>
-      <div class="eq-bar" style="--delay:0.6s"></div>
-      <div class="eq-bar" style="--delay:0.15s"></div>
-      <div class="eq-bar" style="--delay:0.35s"></div>
-      <div class="eq-bar" style="--delay:0.25s"></div>
-    </div>
-  </div>
-
-  <footer class="player-bar">
-    <div class="now-playing-info">
-      <img id="currentCover" src="" alt="cover">
-      <div class="track-info">
-        <p id="currentTitle">Select a song</p>
-        <p id="currentArtist">Pick from your playlist</p>
-      </div>
-      <button class="fav-btn" id="favBtn"><i class="far fa-heart"></i></button>
-    </div>
-
-    <div class="player-controls">
-      <div class="controls-top">
-        <button id="shuffleBtn" title="Shuffle"><i class="fas fa-random"></i></button>
-        <button id="prevBtn" title="Previous"><i class="fas fa-step-backward"></i></button>
-        <button id="playBtn" title="Play/Pause"><i class="fas fa-play"></i></button>
-        <button id="nextBtn" title="Next"><i class="fas fa-step-forward"></i></button>
-        <button id="repeatBtn" title="Repeat"><i class="fas fa-repeat"></i></button>
-      </div>
-      <div class="progress-container">
-        <span id="currentTime">0:00</span>
-        <div class="progress-bar" id="progressBar">
-          <div class="progress-fill" id="progressFill"></div>
-          <div class="progress-thumb" id="progressThumb"></div>
+    <!-- Hero Slider -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);">
+                <div class="slide-content">
+                    <div class="hero-logo-wrapper"><span class="hero-logo-text">KEC</span></div>
+                    <h1>KEC</h1>
+                    <p class="motto">"Knowledge is Power"</p>
+                    <p class="welcome-text">Welcome to KEC – where innovation meets excellence. We nurture future leaders through world-class education, cutting-edge research, and holistic development.</p>
+                    <div class="hero-buttons">
+                        <a href="#admissions" class="btn btn-primary pulse-animation">Apply Now</a>
+                        <a href="#about" class="btn btn-secondary">Explore Campus</a>
+                    </div>
+                    <div class="admission-banner">
+                        <span class="blink">Admissions Open 2026-27</span>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(135deg, #111111 0%, #2d2d2d 100%);">
+                <div class="slide-content">
+                    <h1>Excellence in Engineering & Technology</h1>
+                    <p>Ranked among the top engineering colleges with NAAC A+ accreditation and NBA accreditation for all eligible programs.</p>
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn btn-primary pulse-animation">Know More</a>
+                        <a href="#courses" class="btn btn-secondary">View Courses</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);">
+                <div class="slide-content">
+                    <h1>Shaping Tomorrow's Leaders</h1>
+                    <p>With 5000+ students, 350+ faculty, and 98% placement record, we are committed to shaping the next generation of innovators and leaders.</p>
+                    <div class="hero-buttons">
+                        <a href="#placements" class="btn btn-primary pulse-animation">Placements</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <span id="totalDuration">0:00</span>
-      </div>
+        <button class="slider-btn prev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+        <div class="slider-indicators"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About <span>Our College</span></h2>
+                <div class="section-divider"></div>
+                <p>Discover the legacy of excellence at KEC</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content fade-in">
+                    <h3>Our History</h3>
+                    <p>Founded in 1995, KEC has grown from a small engineering college to a premier institution of higher learning. With a sprawling 250-acre campus and state-of-the-art infrastructure, we have been at the forefront of technical education for over three decades.</p>
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <h4>30+</h4>
+                            <p>Years of Excellence</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>250</h4>
+                            <p>Acre Campus</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>A+</h4>
+                            <p>NAAC Grade</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content fade-in">
+                    <h3>Vision & Mission</h3>
+                    <div class="vision-mission">
+                        <div class="vm-box">
+                            <i class="fas fa-eye"></i>
+                            <h4>Our Vision</h4>
+                            <p>To emerge as a world-class institution producing globally competent professionals with strong ethical values.</p>
+                        </div>
+                        <div class="vm-box">
+                            <i class="fas fa-bullseye"></i>
+                            <h4>Our Mission</h4>
+                            <p>To provide quality education through innovative teaching, research, and industry collaboration for holistic student development.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content fade-in">
+                    <h3>Principal's Message</h3>
+                    <div class="message-card">
+                        <img src="assets/images/faculty/principal.jpg" alt="Principal" onerror="this.style.display='none'">
+                        <div>
+                            <h4>Dr. Rajesh Kumar</h4>
+                            <p class="designation">Principal, KEC</p>
+                            <p>"At KEC, we believe in nurturing not just engineers, but future leaders who will drive innovation and change. Our commitment to academic excellence, research, and holistic development ensures that every student is prepared to meet global challenges."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content fade-in">
+                    <h3>Chairman's Message</h3>
+                    <div class="message-card">
+                        <img src="assets/images/faculty/chairman.jpg" alt="Chairman" onerror="this.style.display='none'">
+                        <div>
+                            <h4>Mr. S. R. Murugan</h4>
+                            <p class="designation">Chairman, KEC Group of Institutions</p>
+                            <p>"Education is the most powerful weapon to change the world. At KEC, we are dedicated to providing an environment that fosters creativity, critical thinking, and compassion in our students."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content fade-in">
+                    <h3>Accreditations & Rankings</h3>
+                    <div class="accred-grid">
+                        <div class="accred-card"><i class="fas fa-award"></i><h4>NAAC A+</h4><p>Accredited</p></div>
+                        <div class="accred-card"><i class="fas fa-certificate"></i><h4>NBA</h4><p>All Eligible Programs</p></div>
+                        <div class="accred-card"><i class="fas fa-trophy"></i><h4>NIRF</h4><p>Ranked Top 100</p></div>
+                        <div class="accred-card"><i class="fas fa-university"></i><h4>Affiliated</h4><p>Anna University</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Counter Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3><span class="counter" data-target="5000">0</span>+</h3>
+                    <p>Students</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3><span class="counter" data-target="350">0</span>+</h3>
+                    <p>Faculty</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-briefcase"></i>
+                    <h3><span class="counter" data-target="98">0</span>%</h3>
+                    <p>Placements</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-building"></i>
+                    <h3><span class="counter" data-target="150">0</span>+</h3>
+                    <p>Recruiters</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-flask"></i>
+                    <h3><span class="counter" data-target="50">0</span>+</h3>
+                    <p>Labs</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-book"></i>
+                    <h3><span class="counter" data-target="100000">0</span>+</h3>
+                    <p>Library Books</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Departments</span></h2>
+                <div class="section-divider"></div>
+                <p>Explore our diverse academic departments offering world-class education</p>
+            </div>
+            <div class="dept-search">
+                <input type="text" id="deptSearch" placeholder="Search departments...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="dept-grid" id="deptGrid">
+                <div class="dept-card fade-in" data-name="Electronics Communication Engineering">
+                    <div class="dept-img"><i class="fas fa-microchip"></i></div>
+                    <div class="dept-info">
+                        <h3>Electronics Communication Engineering</h3>
+                        <p class="hod">HOD: Dr. Venkatesh Rao</p>
+                        <p>Comprehensive program in VLSI design, embedded systems, communication networks, and signal processing with industry-aligned training.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Electrical and Electronics Engineering">
+                    <div class="dept-img"><i class="fas fa-bolt"></i></div>
+                    <div class="dept-info">
+                        <h3>Electrical and Electronics Engineering</h3>
+                        <p class="hod">HOD: Dr. Lakshmi Narayanan</p>
+                        <p>Power systems, renewable energy, electrical machines, and control systems with modern lab infrastructure and smart grid research.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Computer Science Engineering">
+                    <div class="dept-img"><i class="fas fa-laptop-code"></i></div>
+                    <div class="dept-info">
+                        <h3>Computer Science Engineering</h3>
+                        <p class="hod">HOD: Dr. Priya Sharma</p>
+                        <p>Offering cutting-edge curriculum in algorithms, data structures, AI, and software engineering with industry-aligned training.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Computer Science Engineering (AI&ML)">
+                    <div class="dept-img"><i class="fas fa-robot"></i></div>
+                    <div class="dept-info">
+                        <h3>CSE (AI & ML)</h3>
+                        <p class="hod">HOD: Dr. Sneha Patel</p>
+                        <p>Specialized program in machine learning, deep learning, neural networks, and natural language processing with hands-on AI labs.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Computer Science Engineering (DS)">
+                    <div class="dept-img"><i class="fas fa-database"></i></div>
+                    <div class="dept-info">
+                        <h3>CSE (Data Science)</h3>
+                        <p class="hod">HOD: Dr. Arun Kumar</p>
+                        <p>Focus on big data analytics, data visualization, statistical modeling, and business intelligence with modern tools.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Artificial Intelligence">
+                    <div class="dept-img"><i class="fas fa-brain"></i></div>
+                    <div class="dept-info">
+                        <h3>Artificial Intelligence</h3>
+                        <p class="hod">HOD: Dr. Karthik Rajan</p>
+                        <p>Dedicated AI program covering computer vision, reinforcement learning, robotics, and intelligent systems development.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Mechanical Engineering">
+                    <div class="dept-img"><i class="fas fa-cogs"></i></div>
+                    <div class="dept-info">
+                        <h3>Mechanical Engineering</h3>
+                        <p class="hod">HOD: Dr. Suresh Babu</p>
+                        <p>Thermal engineering, design, manufacturing, and automotive engineering with advanced CAD/CAM labs and industry tie-ups.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Humanities and Sciences">
+                    <div class="dept-img"><i class="fas fa-book-open"></i></div>
+                    <div class="dept-info">
+                        <h3>Humanities and Sciences</h3>
+                        <p class="hod">HOD: Dr. Anitha Devi</p>
+                        <p>Foundation courses in Mathematics, Physics, Chemistry, English, and soft skills development for holistic education.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Civil Engineering">
+                    <div class="dept-img"><i class="fas fa-hard-hat"></i></div>
+                    <div class="dept-info">
+                        <h3>Civil Engineering</h3>
+                        <p class="hod">HOD: Dr. Meena Krishnan</p>
+                        <p>Structural engineering, geotechnical engineering, transportation, and environmental engineering programs with modern labs.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Master of Business Administration">
+                    <div class="dept-img"><i class="fas fa-chart-line"></i></div>
+                    <div class="dept-info">
+                        <h3>Master of Business Administration</h3>
+                        <p class="hod">HOD: Dr. Rajesh Kumar</p>
+                        <p>Finance, marketing, HR, operations, and business analytics with industry internships, live projects, and global exposure.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+                <div class="dept-card fade-in" data-name="Research and Development">
+                    <div class="dept-img"><i class="fas fa-flask"></i></div>
+                    <div class="dept-info">
+                        <h3>Research & Development</h3>
+                        <p class="hod">HOD: Dr. S. Murugan</p>
+                        <p>Dedicated R&D cell promoting innovation, patents, funded research projects, and collaborations with premier institutions and industries.</p>
+                        <a href="#" class="btn btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Courses <span>Offered</span></h2>
+                <div class="section-divider"></div>
+                <p>Choose from a wide range of undergraduate and postgraduate programs</p>
+            </div>
+            <div class="courses-tabs">
+                <button class="tab-btn active" data-tab="ug">Undergraduate</button>
+                <button class="tab-btn" data-tab="pg">Postgraduate</button>
+            </div>
+            <div class="tab-content active" id="ug">
+                <div class="course-grid">
+                    <div class="course-card slide-up">
+                        <div class="course-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>B.Tech</h3>
+                        <ul>
+                            <li><strong>Duration:</strong> 4 Years</li>
+                            <li><strong>Eligibility:</strong> 10+2 with PCM (60% min)</li>
+                            <li><strong>Intake:</strong> 720 Seats</li>
+                        </ul>
+                        <p>Comprehensive engineering program with specializations including ECE, EEE, CSE, CSE (AI&ML), CSE (DS), AI, Mechanical, and Civil.</p>
+                    </div>
+                    <div class="course-card slide-up">
+                        <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>BBA</h3>
+                        <ul>
+                            <li><strong>Duration:</strong> 3 Years</li>
+                            <li><strong>Eligibility:</strong> 10+2 (50% min)</li>
+                            <li><strong>Intake:</strong> 120 Seats</li>
+                        </ul>
+                        <p>Bachelor of Business Administration with specializations in Finance, Marketing, HR, and International Business.</p>
+                    </div>
+                    <div class="course-card slide-up">
+                        <div class="course-icon"><i class="fas fa-calculator"></i></div>
+                        <h3>BCA</h3>
+                        <ul>
+                            <li><strong>Duration:</strong> 3 Years</li>
+                            <li><strong>Eligibility:</strong> 10+2 with Maths (50% min)</li>
+                            <li><strong>Intake:</strong> 90 Seats</li>
+                        </ul>
+                        <p>Bachelor of Computer Applications focusing on software development, web technologies, and database management.</p>
+                    </div>
+                    <div class="course-card slide-up">
+                        <div class="course-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h3>B.Com</h3>
+                        <ul>
+                            <li><strong>Duration:</strong> 3 Years</li>
+                            <li><strong>Eligibility:</strong> 10+2 (50% min)</li>
+                            <li><strong>Intake:</strong> 120 Seats</li>
+                        </ul>
+                        <p>Bachelor of Commerce with specializations in Accounting, Finance, and Banking with industry-oriented curriculum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="pg">
+                <div class="course-grid">
+                    <div class="course-card slide-up">
+                        <div class="course-icon"><i class="fas fa-microchip"></i></div>
+                        <h3>M.Tech</h3>
+                        <ul>
+                            <li><strong>Duration:</strong> 2 Years</li>
+                            <li><strong>Eligibility:</strong> B.E/B.Tech (60% min)</li>
+                            <li><strong>Intake:</strong> 180 Seats</li>
+                        </ul>
+                        <p>Master of Technology with specializations in CSE, VLSI, Power Systems, Structural Engineering, and more.</p>
+                    </div>
+                    <div class="course-card slide-up">
+                        <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>MBA</h3>
+                        <ul>
+                            <li><strong>Duration:</strong> 2 Years</li>
+                            <li><strong>Eligibility:</strong> Any Degree (50% min)</li>
+                            <li><strong>Intake:</strong> 120 Seats</li>
+                        </ul>
+                        <p>Master of Business Administration with dual specialization and summer internship projects with top companies.</p>
+                    </div>
+                    <div class="course-card slide-up">
+                        <div class="course-icon"><i class="fas fa-code"></i></div>
+                        <h3>MCA</h3>
+                        <ul>
+                            <li><strong>Duration:</strong> 2 Years</li>
+                            <li><strong>Eligibility:</strong> BCA/B.Sc (60% min)</li>
+                            <li><strong>Intake:</strong> 60 Seats</li>
+                        </ul>
+                        <p>Master of Computer Applications with advanced curriculum in AI, Cloud Computing, and Full Stack Development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Admissions <span>2026-27</span></h2>
+                <div class="section-divider"></div>
+                <p>Begin your journey at KEC</p>
+            </div>
+            <div class="admission-grid">
+                <div class="admission-content fade-in">
+                    <h3>Admission Process</h3>
+                    <div class="process-steps">
+                        <div class="step"><span>1</span><p>Fill Online Application Form</p></div>
+                        <div class="step"><span>2</span><p>Upload Required Documents</p></div>
+                        <div class="step"><span>3</span><p>Pay Application Fee</p></div>
+                        <div class="step"><span>4</span><p>Counseling & Interview</p></div>
+                        <div class="step"><span>5</span><p>Confirm Admission</p></div>
+                    </div>
+                </div>
+                <div class="admission-content fade-in">
+                    <h3>Eligibility Criteria</h3>
+                    <ul class="eligibility-list">
+                        <li><i class="fas fa-check-circle"></i> B.Tech: 10+2 with PCM, 60% aggregate</li>
+                        <li><i class="fas fa-check-circle"></i> BBA/BCA/B.Com: 10+2, 50% aggregate</li>
+                        <li><i class="fas fa-check-circle"></i> M.Tech: B.E/B.Tech, 60% aggregate</li>
+                        <li><i class="fas fa-check-circle"></i> MBA: Any Degree, 50% aggregate</li>
+                        <li><i class="fas fa-check-circle"></i> MCA: BCA/B.Sc, 60% aggregate</li>
+                    </ul>
+                </div>
+                <div class="admission-content fade-in">
+                    <h3>Required Documents</h3>
+                    <ul class="doc-list">
+                        <li><i class="fas fa-file-alt"></i> 10th & 12th Marksheets</li>
+                        <li><i class="fas fa-file-alt"></i> Degree Certificates (PG)</li>
+                        <li><i class="fas fa-id-card"></i> Transfer Certificate</li>
+                        <li><i class="fas fa-id-card"></i> Conduct Certificate</li>
+                        <li><i class="fas fa-image"></i> Passport Size Photos</li>
+                        <li><i class="fas fa-id-card"></i> Aadhar Card Copy</li>
+                    </ul>
+                </div>
+                <div class="admission-content fade-in">
+                    <h3>Fee Structure (Per Year)</h3>
+                    <div class="fee-table">
+                        <div class="fee-row"><span>B.Tech</span><span>Rs. 1,50,000</span></div>
+                        <div class="fee-row"><span>BBA</span><span>Rs. 85,000</span></div>
+                        <div class="fee-row"><span>BCA</span><span>Rs. 75,000</span></div>
+                        <div class="fee-row"><span>B.Com</span><span>Rs. 60,000</span></div>
+                        <div class="fee-row"><span>M.Tech</span><span>Rs. 1,20,000</span></div>
+                        <div class="fee-row"><span>MBA</span><span>Rs. 1,50,000</span></div>
+                        <div class="fee-row"><span>MCA</span><span>Rs. 1,00,000</span></div>
+                    </div>
+                </div>
+                <div class="admission-content fade-in full-width">
+                    <h3>Scholarships</h3>
+                    <div class="scholarship-grid">
+                        <div class="scholar-card"><i class="fas fa-star"></i><h4>Merit Scholarship</h4><p>95%+ in 12th: 100% Fee Waiver</p></div>
+                        <div class="scholar-card"><i class="fas fa-users"></i><h4>Sports Quota</h4><p>National/State Level: 50% Fee Waiver</p></div>
+                        <div class="scholar-card"><i class="fas fa-hand-holding-heart"></i><h4>Need-Based</h4><p>Economic Background: Up to 75% Waiver</p></div>
+                        <div class="scholar-card"><i class="fas fa-trophy"></i><h4>Defense Quota</h4><p>Defense Personnel Children: 30% Waiver</p></div>
+                    </div>
+                </div>
+                <div class="admission-buttons full-width">
+                    <a href="#" class="btn btn-primary">Apply Online</a>
+                    <a href="#" class="btn btn-secondary">Download Brochure</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Faculty</span></h2>
+                <div class="section-divider"></div>
+                <p>Meet our dedicated team of educators and researchers</p>
+            </div>
+            <div class="faculty-search">
+                <input type="text" id="facultySearch" placeholder="Search by name or department...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="faculty-grid" id="facultyGrid">
+                <div class="faculty-card fade-in" data-name="Dr. Priya Sharma" data-dept="CSE">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. Priya Sharma</h4>
+                        <p class="desig">Professor & HOD</p>
+                        <p class="qual">Ph.D (CSE), IIT Madras</p>
+                        <p class="exp">Experience: 18 Years</p>
+                        <p class="dept-tag">CSE</p>
+                    </div>
+                </div>
+                <div class="faculty-card fade-in" data-name="Dr. Arun Kumar" data-dept="IT">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. Arun Kumar</h4>
+                        <p class="desig">Professor & HOD</p>
+                        <p class="qual">Ph.D (IT), Anna University</p>
+                        <p class="exp">Experience: 15 Years</p>
+                        <p class="dept-tag">IT</p>
+                    </div>
+                </div>
+                <div class="faculty-card fade-in" data-name="Dr. Sneha Patel" data-dept="AI">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. Sneha Patel</h4>
+                        <p class="desig">Professor & HOD</p>
+                        <p class="qual">Ph.D (AI), IIT Bombay</p>
+                        <p class="exp">Experience: 12 Years</p>
+                        <p class="dept-tag">AI & DS</p>
+                    </div>
+                </div>
+                <div class="faculty-card fade-in" data-name="Dr. Venkatesh Rao" data-dept="ECE">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. Venkatesh Rao</h4>
+                        <p class="desig">Professor & HOD</p>
+                        <p class="qual">Ph.D (ECE), IIT Kharagpur</p>
+                        <p class="exp">Experience: 20 Years</p>
+                        <p class="dept-tag">ECE</p>
+                    </div>
+                </div>
+                <div class="faculty-card fade-in" data-name="Dr. Lakshmi Narayanan" data-dept="EEE">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. Lakshmi Narayanan</h4>
+                        <p class="desig">Professor & HOD</p>
+                        <p class="qual">Ph.D (EEE), NIT Trichy</p>
+                        <p class="exp">Experience: 16 Years</p>
+                        <p class="dept-tag">EEE</p>
+                    </div>
+                </div>
+                <div class="faculty-card fade-in" data-name="Dr. Suresh Babu" data-dept="Mech">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. Suresh Babu</h4>
+                        <p class="desig">Professor & HOD</p>
+                        <p class="qual">Ph.D (Mech), IIT Delhi</p>
+                        <p class="exp">Experience: 22 Years</p>
+                        <p class="dept-tag">Mechanical</p>
+                    </div>
+                </div>
+                <div class="faculty-card fade-in" data-name="Dr. Anitha Devi" data-dept="Civil">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. Anitha Devi</h4>
+                        <p class="desig">Professor & HOD</p>
+                        <p class="qual">Ph.D (Civil), IIT Roorkee</p>
+                        <p class="exp">Experience: 14 Years</p>
+                        <p class="dept-tag">Civil</p>
+                    </div>
+                </div>
+                <div class="faculty-card fade-in" data-name="Dr. Karthik Rajan" data-dept="MBA">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. Karthik Rajan</h4>
+                        <p class="desig">Professor & HOD</p>
+                        <p class="qual">Ph.D (Mgmt), XLRI</p>
+                        <p class="exp">Experience: 17 Years</p>
+                        <p class="dept-tag">MBA</p>
+                    </div>
+                </div>
+                <div class="faculty-card fade-in" data-name="Dr. Meena Krishnan" data-dept="Civil">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. Meena Krishnan</h4>
+                        <p class="desig">Professor & HOD</p>
+                        <p class="qual">Ph.D (Civil), IIT Roorkee</p>
+                        <p class="exp">Experience: 13 Years</p>
+                        <p class="dept-tag">Civil</p>
+                    </div>
+                </div>
+                <div class="faculty-card fade-in" data-name="Dr. S. Murugan" data-dept="R&D">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <div class="faculty-info">
+                        <h4>Dr. S. Murugan</h4>
+                        <p class="desig">Director - R&D</p>
+                        <p class="qual">Ph.D (Nanotech), IIT Bombay</p>
+                        <p class="exp">Experience: 20 Years</p>
+                        <p class="dept-tag">R&D</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Facilities Section -->
+    <section id="facilities" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Campus <span>Facilities</span></h2>
+                <div class="section-divider"></div>
+                <p>World-class infrastructure for an enriching campus experience</p>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-card zoom-in"><i class="fas fa-book"></i><h3>Library</h3><p>1,00,000+ books, digital resources, and reading halls</p></div>
+                <div class="facility-card zoom-in"><i class="fas fa-desktop"></i><h3>Computer Labs</h3><p>50+ labs with latest hardware and software</p></div>
+                <div class="facility-card zoom-in"><i class="fas fa-chalkboard"></i><h3>Smart Classrooms</h3><p>IoT-enabled classrooms with interactive boards</p></div>
+                <div class="facility-card zoom-in"><i class="fas fa-bed"></i><h3>Hostel</h3><p>Separate hostels for boys & girls with Wi-Fi</p></div>
+                <div class="facility-card zoom-in"><i class="fas fa-running"></i><h3>Sports Complex</h3><p>Indoor & outdoor sports facilities</p></div>
+                <div class="facility-card zoom-in"><i class="fas fa-theater-masks"></i><h3>Auditorium</h3><p>2000-seat air-conditioned auditorium</p></div>
+                <div class="facility-card zoom-in"><i class="fas fa-utensils"></i><h3>Cafeteria</h3><p>Multi-cuisine food court and canteens</p></div>
+                <div class="facility-card zoom-in"><i class="fas fa-hospital"></i><h3>Medical Center</h3><p>24/7 on-campus medical facility</p></div>
+                <div class="facility-card zoom-in"><i class="fas fa-wifi"></i><h3>Wi-Fi Campus</h3><p>High-speed internet across the campus</p></div>
+                <div class="facility-card zoom-in"><i class="fas fa-bus"></i><h3>Transportation</h3><p>50+ buses covering all city routes</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placements Section -->
+    <section id="placements" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Placement <span>Cell</span></h2>
+                <div class="section-divider"></div>
+                <p>Building careers with exceptional placement opportunities</p>
+            </div>
+            <div class="placement-stats">
+                <div class="placement-stat-card">
+                    <h3><span class="counter" data-target="25">0</span>+ LPA</h3>
+                    <p>Highest Package</p>
+                </div>
+                <div class="placement-stat-card">
+                    <h3><span class="counter" data-target="6.5">0</span> LPA</h3>
+                    <p>Average Package</p>
+                </div>
+                <div class="placement-stat-card">
+                    <h3><span class="counter" data-target="98">0</span>%</h3>
+                    <p>Placement Rate</p>
+                </div>
+            </div>
+            <div class="section-subtitle"><h3>Top Recruiters</h3></div>
+            <div class="recruiters-grid">
+                <div class="recruiter-card"><i class="fab fa-tcs"></i><span>TCS</span></div>
+                <div class="recruiter-card"><i class="fab fa-infinity"></i><span>Infosys</span></div>
+                <div class="recruiter-card"><i class="fab fa-wipro"></i><span>Wipro</span></div>
+                <div class="recruiter-card"><i class="fas fa-chart-simple"></i><span>Accenture</span></div>
+                <div class="recruiter-card"><i class="fas fa-brain"></i><span>Cognizant</span></div>
+                <div class="recruiter-card"><i class="fas fa-cubes"></i><span>Capgemini</span></div>
+                <div class="recruiter-card"><i class="fab fa-microsoft"></i><span>Microsoft</span></div>
+                <div class="recruiter-card"><i class="fab fa-google"></i><span>Google</span></div>
+                <div class="recruiter-card"><i class="fab fa-amazon"></i><span>Amazon</span></div>
+                <div class="recruiter-card"><i class="fas fa-robot"></i><span>Intel</span></div>
+            </div>
+            <div class="section-subtitle"><h3>Internship Opportunities</h3></div>
+            <div class="internship-grid">
+                <div class="internship-card">Summer Internship Program</div>
+                <div class="internship-card">Industry Sponsored Projects</div>
+                <div class="internship-card">Research Internships</div>
+                <div class="internship-card">International Internships</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming <span>Events</span></h2>
+                <div class="section-divider"></div>
+                <p>Stay updated with the latest happenings at KEC</p>
+            </div>
+            <div class="event-countdown">
+                <h3>Next Event Starts In</h3>
+                <div class="countdown-timer" id="countdown">
+                    <div class="time-box"><span id="days">00</span><p>Days</p></div>
+                    <div class="time-box"><span id="hours">00</span><p>Hours</p></div>
+                    <div class="time-box"><span id="minutes">00</span><p>Mins</p></div>
+                    <div class="time-box"><span id="seconds">00</span><p>Secs</p></div>
+                </div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card fade-in">
+                    <div class="event-img"><i class="fas fa-laptop-code"></i></div>
+                    <div class="event-info">
+                        <h3>Tech Hackathon 2026</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> Aug 15-17, 2026</p>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Innovation Lab</p>
+                        <p>48-hour coding challenge to solve real-world problems using cutting-edge technology.</p>
+                        <a href="#" class="btn btn-sm">Register Now</a>
+                    </div>
+                </div>
+                <div class="event-card fade-in">
+                    <div class="event-img"><i class="fas fa-flask"></i></div>
+                    <div class="event-info">
+                        <h3>National Science Seminar</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> Sep 5, 2026</p>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Main Auditorium</p>
+                        <p>Eminent scientists and researchers share insights on emerging trends in science and technology.</p>
+                        <a href="#" class="btn btn-sm">Register Now</a>
+                    </div>
+                </div>
+                <div class="event-card fade-in">
+                    <div class="event-img"><i class="fas fa-music"></i></div>
+                    <div class="event-info">
+                        <h3>Cultural Fest 2026</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> Oct 20-22, 2026</p>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> College Grounds</p>
+                        <p>Three-day cultural extravaganza featuring music, dance, drama, and literary events.</p>
+                        <a href="#" class="btn btn-sm">Register Now</a>
+                    </div>
+                </div>
+                <div class="event-card fade-in">
+                    <div class="event-img"><i class="fas fa-running"></i></div>
+                    <div class="event-info">
+                        <h3>Annual Sports Meet</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> Nov 10-14, 2026</p>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Sports Complex</p>
+                        <p>Inter-department sports competition with athletics, team sports, and indoor games.</p>
+                        <a href="#" class="btn btn-sm">Register Now</a>
+                    </div>
+                </div>
+                <div class="event-card fade-in">
+                    <div class="event-img"><i class="fas fa-robot"></i></div>
+                    <div class="event-info">
+                        <h3>Technical Symposium</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> Dec 5, 2026</p>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Seminar Hall</p>
+                        <p>Paper presentations, project exhibitions, and technical quizzes on latest technologies.</p>
+                        <a href="#" class="btn btn-sm">Register Now</a>
+                    </div>
+                </div>
+                <div class="event-card fade-in">
+                    <div class="event-img"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="event-info">
+                        <h3>Industry Workshop</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> Jan 15, 2027</p>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Computer Labs</p>
+                        <p>Hands-on workshop on Full Stack Development and Cloud Computing by industry experts.</p>
+                        <a href="#" class="btn btn-sm">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Photo <span>Gallery</span></h2>
+                <div class="section-divider"></div>
+                <p>Glimpses of life at KEC</p>
+            </div>
+            <div class="gallery-filters">
+                <button class="gallery-filter active" data-filter="all">All</button>
+                <button class="gallery-filter" data-filter="campus">Campus</button>
+                <button class="gallery-filter" data-filter="events">Events</button>
+                <button class="gallery-filter" data-filter="labs">Labs</button>
+                <button class="gallery-filter" data-filter="library">Library</button>
+                <button class="gallery-filter" data-filter="sports">Sports</button>
+                <button class="gallery-filter" data-filter="hostel">Hostel</button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1775623606645-470e04a881cb?w=400&h=300&fit=crop" alt="Graduation Ceremony">
+                    <div class="gallery-overlay"><span>Graduation Ceremony</span></div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop" alt="College Event">
+                    <div class="gallery-overlay"><span>Annual Day Celebration</span></div>
+                </div>
+                <div class="gallery-item" data-category="campus">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop" alt="Campus Building">
+                    <div class="gallery-overlay"><span>Main Campus</span></div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&h=300&fit=crop" alt="Tech Event">
+                    <div class="gallery-overlay"><span>Tech Symposium</span></div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop" alt="Convocation">
+                    <div class="gallery-overlay"><span>Convocation Day</span></div>
+                </div>
+                <div class="gallery-item" data-category="campus">
+                    <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400&h=300&fit=crop" alt="College Grounds">
+                    <div class="gallery-overlay"><span>College Grounds</span></div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop" alt="Cultural Program">
+                    <div class="gallery-overlay"><span>Cultural Program</span></div>
+                </div>
+                <div class="gallery-item" data-category="labs">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop" alt="Computer Lab">
+                    <div class="gallery-overlay"><span>Computer Lab</span></div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&h=300&fit=crop" alt="College Fest">
+                    <div class="gallery-overlay"><span>College Fest</span></div>
+                </div>
+                <div class="gallery-item" data-category="library">
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=300&fit=crop" alt="Library">
+                    <div class="gallery-overlay"><span>Central Library</span></div>
+                </div>
+                <div class="gallery-item" data-category="sports">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=300&fit=crop" alt="Sports">
+                    <div class="gallery-overlay"><span>Sports Meet</span></div>
+                </div>
+                <div class="gallery-item" data-category="campus">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=300&fit=crop" alt="Campus Aerial">
+                    <div class="gallery-overlay"><span>Campus Aerial View</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-prev"><i class="fas fa-chevron-left"></i></span>
+        <span class="lightbox-next"><i class="fas fa-chevron-right"></i></span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
     </div>
 
-    <div class="volume-controls">
-      <button id="muteBtn" title="Mute/Unmute"><i class="fas fa-volume-up"></i></button>
-      <div class="volume-slider">
-        <div class="volume-fill" id="volumeFill"></div>
-        <div class="volume-thumb" id="volumeThumb"></div>
-      </div>
-      <span id="volumePercent">100%</span>
-    </div>
-  </footer>
+    <!-- Latest News Section -->
+    <section id="news" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest <span>News</span></h2>
+                <div class="section-divider"></div>
+                <p>Stay informed with the latest announcements and updates</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card slide-left">
+                    <div class="news-date"><span>Jul</span><span>01</span></div>
+                    <h3>Admissions Open for 2026-27</h3>
+                    <p>Online applications are now open for all UG and PG programs. Apply before August 31, 2026.</p>
+                </div>
+                <div class="news-card slide-left">
+                    <div class="news-date"><span>Jun</span><span>28</span></div>
+                    <h3>Semester Exam Schedule</h3>
+                    <p>The end semester examination schedule for all departments has been released. Check the portal.</p>
+                </div>
+                <div class="news-card slide-left">
+                    <div class="news-date"><span>Jun</span><span>20</span></div>
+                    <h3>Hackathon Winners</h3>
+                    <p>Our team won 1st prize at the National Level Hackathon organized by IIT Madras.</p>
+                </div>
+                <div class="news-card slide-left">
+                    <div class="news-date"><span>Jun</span><span>15</span></div>
+                    <h3>Holiday Notice</h3>
+                    <p>College will remain closed on June 21 for the local festival. Academic activities will resume on June 22.</p>
+                </div>
+                <div class="news-card slide-left">
+                    <div class="news-date"><span>Jun</span><span>10</span></div>
+                    <h3>Research Publication Achievement</h3>
+                    <p>Faculty from CSE department published 5 research papers in IEEE international journals this month.</p>
+                </div>
+                <div class="news-card slide-left">
+                    <div class="news-date"><span>Jun</span><span>05</span></div>
+                    <h3>Placement Drive Results</h3>
+                    <p>150+ students placed in TCS, Infosys, and Wipro during the campus placement drive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="toast-container" id="toastContainer"></div>
+    <!-- Achievements Section -->
+    <section id="achievements" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Achievements</span></h2>
+                <div class="section-divider"></div>
+                <p>Celebrating excellence and success stories</p>
+            </div>
+            <div class="achievement-grid">
+                <div class="achievement-card zoom-in">
+                    <i class="fas fa-trophy"></i>
+                    <h3>University Rank Holders</h3>
+                    <p>15 students in Anna University Top 100 ranks for 2025-26 academic year.</p>
+                </div>
+                <div class="achievement-card zoom-in">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Placement Records</h3>
+                    <p>98% placement rate with highest package of 25 LPA achieved in 2025-26.</p>
+                </div>
+                <div class="achievement-card zoom-in">
+                    <i class="fas fa-code"></i>
+                    <h3>Hackathon Winners</h3>
+                    <p>National champions at Smart India Hackathon 2025 and 2026.</p>
+                </div>
+                <div class="achievement-card zoom-in">
+                    <i class="fas fa-medal"></i>
+                    <h3>Sports Achievements</h3>
+                    <p>Gold medal at Inter-University Athletic Meet and State Level Basketball Championship.</p>
+                </div>
+                <div class="achievement-card zoom-in">
+                    <i class="fas fa-book"></i>
+                    <h3>Research Publications</h3>
+                    <p>200+ research papers published in Scopus/SCI indexed journals in the last year.</p>
+                </div>
+                <div class="achievement-card zoom-in">
+                    <i class="fas fa-award"></i>
+                    <h3>NAAC A+ Grade</h3>
+                    <p>Awarded A+ grade by NAAC with a CGPA of 3.52 in the latest accreditation cycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="spinner"></div>
-  </div>
+    <!-- Student Testimonials -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Student <span>Testimonials</span></h2>
+                <div class="section-divider"></div>
+                <p>Hear from our students about their KEC experience</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-img"><i class="fas fa-user-graduate"></i></div>
+                    <p class="testimonial-text">"KEC has been a transformative experience. The faculty, infrastructure, and placement opportunities are world-class. I'm proud to be a KECian."</p>
+                    <h4>Rahul Sharma</h4>
+                    <p class="testimonial-info">B.Tech CSE, 2025 Batch | Placed at Microsoft</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img"><i class="fas fa-user-graduate"></i></div>
+                    <p class="testimonial-text">"The practical learning approach and industry exposure at KEC helped me build a strong foundation. The campus life is vibrant with numerous clubs and activities."</p>
+                    <h4>Ananya Patel</h4>
+                    <p class="testimonial-info">B.Tech IT, 2025 Batch | Placed at Google</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img"><i class="fas fa-user-graduate"></i></div>
+                    <p class="testimonial-text">"From state-of-the-art labs to experienced faculty, KEC provides everything needed for holistic development. The placement training program is exceptional."</p>
+                    <h4>Vikram Singh</h4>
+                    <p class="testimonial-info">B.Tech AI & DS, 2026 Batch | Placed at Amazon</p>
+                </div>
+            </div>
+            <div class="testimonial-dots"></div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- FAQ Section -->
+    <section id="faq" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked <span>Questions</span></h2>
+                <div class="section-divider"></div>
+                <p>Find answers to common queries about KEC</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I apply for admission?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can apply online through our website by filling the application form and uploading required documents. Alternatively, you can visit the college campus for offline application.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is hostel accommodation available?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we have separate hostels for boys and girls with all modern amenities including Wi-Fi, 24/7 security, mess, and recreational facilities.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are the scholarship eligibility criteria?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Scholarships are available for meritorious students (95%+ in 12th), sports quota (national/state level), economically weaker sections, and defense personnel children.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are the placement opportunities at KEC?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>KEC has an excellent placement record with 98% placement rate. Top recruiters include TCS, Infosys, Microsoft, Google, Amazon, and many more. Average package is 6.5 LPA.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are the admission deadlines for 2026-27?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The application deadline for the 2026-27 academic year is August 31, 2026. Counselling sessions will begin in September 2026.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Does the college provide transportation?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we operate 50+ buses covering all major routes across the city for the convenience of students and faculty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact <span>Us</span></h2>
+                <div class="section-divider"></div>
+                <p>Get in touch with us for any queries or assistance</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Address</h4>
+                        <p>KEC,<br>Perundurai, Erode<br>Tamil Nadu - 638052</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>+91 4294 226 500<br>+91 4294 226 501</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>admissions@kec.ac.in<br>info@kec.ac.in</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Office Hours</h4>
+                        <p>Mon - Fri: 9:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <span class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <span class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                            <span class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            <span class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                            <span class="error-msg"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-container fade-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.7828!2d77.6056!3d11.1864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba93d0e6c2b3c5d%3A0x8f6a5e1c5b4a3d2f!2sKongu%20Engineering%20College!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About College</h3>
+                    <p>KEC is a premier institution committed to academic excellence, research, and holistic development of students since 1995.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#placements">Placements</a></li>
+                        <li><a href="#faculty">Faculty</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Departments</h3>
+                    <ul>
+                        <li><a href="#departments">Electronics Communication</a></li>
+                        <li><a href="#departments">Electrical & Electronics</a></li>
+                        <li><a href="#departments">Computer Science</a></li>
+                        <li><a href="#departments">CSE (AI & ML)</a></li>
+                        <li><a href="#departments">CSE (Data Science)</a></li>
+                        <li><a href="#departments">Artificial Intelligence</a></li>
+                        <li><a href="#departments">Mechanical Engineering</a></li>
+                        <li><a href="#departments">Humanities & Sciences</a></li>
+                        <li><a href="#departments">Civil Engineering</a></li>
+                        <li><a href="#departments">MBA</a></li>
+                        <li><a href="#departments">R&D</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Perundurai, Erode</p>
+                    <p><i class="fas fa-phone"></i> +91 4294 226 500</p>
+                    <p><i class="fas fa-envelope"></i> info@kec.ac.in</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9 AM - 5 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KEC. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>

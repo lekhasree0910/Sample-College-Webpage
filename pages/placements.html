@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placements - KEC</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loading-screen"><div class="loader"><div class="loader-circle"></div><div class="loader-text">KEC</div></div></div>
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    <nav id="navbar"><div class="nav-container">
+        <div class="nav-logo"><img src="../assets/images/college-logo.png" alt="" onerror="this.style.display='none'"><span>KEC</span></div>
+        <div class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="departments.html" class="nav-link">Departments</a></li>
+            <li><a href="../index.html#courses" class="nav-link">Courses</a></li>
+            <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+            <li><a href="placements.html" class="nav-link active">Placements</a></li>
+            <li><a href="faculty.html" class="nav-link">Faculty</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions"><button id="dark-mode-toggle" class="theme-btn"><i class="fas fa-moon"></i></button></div>
+    </div></nav>
+
+    <section class="section bg-light" style="margin-top:70px;padding-top:30px"><div class="container">
+        <div class="section-header"><h2>Placement <span>Cell</span></h2><div class="section-divider"></div><p>Building careers with exceptional placement opportunities</p></div>
+        <div class="placement-stats">
+            <div class="placement-stat-card"><h3><span class="counter" data-target="25">0</span>+ LPA</h3><p>Highest Package</p></div>
+            <div class="placement-stat-card"><h3><span class="counter" data-target="6.5">0</span> LPA</h3><p>Average Package</p></div>
+            <div class="placement-stat-card"><h3><span class="counter" data-target="98">0</span>%</h3><p>Placement Rate</p></div>
+        </div>
+        <div class="section-subtitle"><h3>Top Recruiters</h3></div>
+        <div class="recruiters-grid">
+            <div class="recruiter-card"><i class="fab fa-tcs"></i><span>TCS</span></div>
+            <div class="recruiter-card"><i class="fab fa-infinity"></i><span>Infosys</span></div>
+            <div class="recruiter-card"><i class="fab fa-wipro"></i><span>Wipro</span></div>
+            <div class="recruiter-card"><i class="fas fa-chart-simple"></i><span>Accenture</span></div>
+            <div class="recruiter-card"><i class="fas fa-brain"></i><span>Cognizant</span></div>
+            <div class="recruiter-card"><i class="fas fa-cubes"></i><span>Capgemini</span></div>
+            <div class="recruiter-card"><i class="fab fa-microsoft"></i><span>Microsoft</span></div>
+            <div class="recruiter-card"><i class="fab fa-google"></i><span>Google</span></div>
+            <div class="recruiter-card"><i class="fab fa-amazon"></i><span>Amazon</span></div>
+            <div class="recruiter-card"><i class="fas fa-robot"></i><span>Intel</span></div>
+        </div>
+        <div class="section-subtitle"><h3>Internship Opportunities</h3></div>
+        <div class="internship-grid">
+            <div class="internship-card">Summer Internship Program</div>
+            <div class="internship-card">Industry Sponsored Projects</div>
+            <div class="internship-card">Research Internships</div>
+            <div class="internship-card">International Internships</div>
+        </div>
+    </div></section>
+
+    <footer class="footer"><div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h3>About College</h3><p>KEC is a premier institution committed to academic excellence since 1995.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+            <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="../index.html#courses">Courses</a></li><li><a href="placements.html">Placements</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+            <div class="footer-col"><h3>Departments</h3><ul><li><a href="departments.html">Electronics Communication</a></li><li><a href="departments.html">Electrical & Electronics</a></li><li><a href="departments.html">Computer Science</a></li><li><a href="departments.html">CSE (AI & ML)</a></li><li><a href="departments.html">CSE (Data Science)</a></li><li><a href="departments.html">Artificial Intelligence</a></li><li><a href="departments.html">Mechanical Engineering</a></li><li><a href="departments.html">Humanities & Sciences</a></li><li><a href="departments.html">Civil Engineering</a></li><li><a href="departments.html">MBA</a></li><li><a href="departments.html">R&D</a></li></ul></div>
+            <div class="footer-col"><h3>Contact Info</h3><p><i class="fas fa-map-marker-alt"></i> Perundurai, Erode</p><p><i class="fas fa-phone"></i> +91 4294 226 500</p><p><i class="fas fa-envelope"></i> info@kec.ac.in</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 KEC. All Rights Reserved.</p></div>
+    </div></footer>
+    <div id="toast-container"></div>
+    <script src="../script.js"></script>
+</body>
+</html>
